@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="update.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="modal_box">
+        <div class="box_update">
+            <div class="header_box">
+                <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
+                    <path
+                        d="M22.3193 3.92792C23.2173 3.02991 23.2173 1.57153 22.3193 0.673512C21.4213 -0.224504 19.9629 -0.224504 19.0649 0.673512L11.5 8.24559L3.92792 0.680696C3.02991 -0.21732 1.57153 -0.21732 0.673512 0.680696C-0.224504 1.57871 -0.224504 3.03709 0.673512 3.93511L8.24559 11.5L0.680697 19.0721C-0.21732 19.9701 -0.21732 21.4285 0.680697 22.3265C1.57871 23.2245 3.03709 23.2245 3.93511 22.3265L11.5 14.7544L19.0721 22.3193C19.9701 23.2173 21.4285 23.2173 22.3265 22.3193C23.2245 21.4213 23.2245 19.9629 22.3265 19.0649L14.7544 11.5L22.3193 3.92792Z"
+                        fill="black" />
+                </svg>
+                <button class="btn-save">Lưu</button>
+            </div>
+            <div class="content_box">
+                <form>
+                    <div class="form-floating mb-3 mt-3">
+                        <input style="height: 64px;" type="text" class="form-control" id="name" placeholder="Enter name"
+                            name="name">
+                        <label for="name">Tên</label>
+                    </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <textarea style="height: 128px;" class="form-control" id="story" placeholder="Enter story"
+                            name="story"></textarea>
+                        <label for="story">Tiểu sử</label>
+                    </div>
+
+                    <div class="form-floating mt-3 mb-3">
+                        <input style="height: 64px;" type="text" class="form-control" id="local"
+                            placeholder="Enter story" name="local">
+                        <label for="local">Vị trí </label>
+                    </div>
+                    <div class="form-floating mt-3 mb-3">
+                        <input style="height: 64px;" type="text" class="form-control" id="birth"
+                            placeholder="Enter story" name="birth">
+                        <label for="birth">Ngày sinh <span class="edit_birth"> *** Chỉnh sữa </span></label>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

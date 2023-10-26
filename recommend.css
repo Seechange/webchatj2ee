@@ -1,0 +1,65 @@
+p{
+    margin: 0;
+}
+.recommend_friend{
+    width: 590px;
+    height: 672px;
+    border-radius: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.20);
+    background: #FFF;
+    margin: 20px auto;
+}
+.recommnend_header{
+    height: 48px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.60);
+    font-weight: 700;
+
+}
+.recommend_member{
+    padding: 0px 16px;
+    margin-bottom: 6px;
+    display: flex;
+    
+}
+.info_friend{
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.img_friend{
+    margin-right: 10px;
+}
+.img_friend img {
+    border-radius: 999px;
+}
+.child_name{
+    font-size: 15px;
+    font-weight: 700;
+    color: #000;
+}
+.child_friend{
+    font-size: 11px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.60);
+}
+.addnew{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 4px;
+    height: 21px;
+    border: 1px solid #cccccc;
+    border-radius: 999px;
+    cursor: pointer;
+}
+.addnew p{
+    font-size: 10px;
+    font-weight: 400;
+    color: #000;
+}

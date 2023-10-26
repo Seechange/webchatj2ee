@@ -1,0 +1,74 @@
+p{
+    margin: 0;
+}
+.box_setting{
+    width: 280px;
+    height: 370px;
+    border-radius: 9px;
+    background: #FFF;
+    border: 1px solid #cccccc;
+    margin: 20px auto;
+    padding: 0px 20px;
+}
+.setting_header{
+    display: flex;
+    align-items: center;
+    padding-top: 21px;
+
+}
+hr{
+    margin: 0;
+    border-color:#D9D9D9;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 28px;
+}
+.img_profile{
+}
+.img_profile img{
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    margin-right: 8px;
+}
+.setting_name p {
+    font-weight: bolder;
+
+}
+
+
+.setting_child{
+    height: 41px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+.setting{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/ys/r/nxzWmKO1zDO.png);
+    background-position: -125px -104px;
+}
+.help{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/vZx3HqQM23H.png);
+    background-position: 1px -192px
+}
+.idea{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/y6/r/vZx3HqQM23H.png);
+    background-position: 1px -65px;
+}
+.screen{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/YzcP4xG_wE-.png);
+    background-position: 1px -267px;
+}
+.logout{
+    background-image: url(https://static.xx.fbcdn.net/rsrc.php/v3/yz/r/YzcP4xG_wE-.png);
+    background-position: 3px -246px;
+}
+.img_setting{
+    width: 22px;
+    height: 22px;
+    border-radius: 999px;
+    border: 1px solid #cccccc;
+    margin-left: 3px;
+    margin-right: 10px;
+}

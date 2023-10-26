@@ -1,0 +1,73 @@
+p{
+    margin: 0;
+}
+
+.list_friend{
+    width: 1041px;
+    margin: 20px auto;
+}
+.list_title{
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+}
+.list_member{
+    padding-top: 40px;
+}
+.info_member  {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px 16px 10px 0;
+    margin-bottom: 10px;
+    
+}
+.img_member img{
+    width: 73px;
+    height: 73px;
+    border-radius: 999px;
+}
+.name_child{
+    color: #000;
+    font-size: 18px;
+    font-weight: 700;
+}
+.friend_child{
+    color: rgba(0, 0, 0, 0.60);
+    font-size: 13px;
+    font-weight: 400;
+}
+.action_icon{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+/* box show action */
+.box_show_action{
+    width: 140px;
+    height: 80px;
+    border-radius: 16px;
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.20); */
+    background: #FFF;
+    position:absolute ;
+    right: 47px;
+    border: 1px solid #cccccc;
+    font-size: 13px;
+    font-weight: 400;
+    bottom: -40px;
+    display: none;
+
+}
+.box_show_action .child{
+    display: flex;
+    height: 50%;
+    align-items: center;
+    justify-content: start;
+    padding: 0 16px;
+}
+.child:first-child{
+    border-bottom: 1px solid #cccccc;
+}
+.child p{
+    margin-left: 8px;
+}

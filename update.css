@@ -1,0 +1,68 @@
+.modal_box{
+    background-color: rgba(128, 128, 128, 0.5);;
+    width: 100%;
+    padding: auto;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: fixed;
+    transition: background-color 0.3s ease-in-out;
+}
+.box_update{
+    width: 751px;
+    height: 471px;
+    border-radius: 16px;
+    background: #FFF;
+    border: 1px solid #cccccc;
+}
+.header_box{
+    height: 53px;
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.btn-save{
+    width: 93px;
+    height: 36px;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: #1F87C2;
+    border: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 8px;
+}
+.content_box{
+    padding: 16px ;
+}
+.content_box textarea,
+.content_box input{
+    height: 70px;
+    border-radius: 16px;
+    margin-bottom: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+    background: #FFF;
+    font-size: 14px;
+    font-weight: 700;
+}
+.content_box label {
+    font-size: 14px;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.60);
+}
+.edit_birth{
+    font-size: 14px;
+    font-weight: 700;
+    color: #000;
+    cursor: pointer;
+}
+
+
