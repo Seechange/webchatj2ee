@@ -195,7 +195,7 @@ body{
 
 /* profile_introduce */
 .profile_introduce{
-    width: 403px;
+    width: 400px;
     height: 168px;
     border-radius:16px ;
     border: 1px solid rgba(0, 0, 0, 0.30);
@@ -242,10 +242,11 @@ body{
 .friend{
     width: 403px;
     height: 311px;
-    background-color: aqua;
+
     margin-bottom: 16px;
     border-radius: 16px;
     margin-left: 16px;
+    /* border: 1px solid #cccccc; */
 }
 .body{
     display: flex;
@@ -255,7 +256,7 @@ body{
     width: 590px;
     height: 249px;
     border-radius: 16px;
-    border: 1px solid #cccccc;
+    /* border: 1px solid #cccccc; */
     margin-bottom: 16px;
 }
 .right_body{
@@ -270,6 +271,7 @@ body{
     border-radius: 16px;
     border: 1px solid rgba(0, 0, 0, 0.20);
     background: #FFF;
+    margin-bottom: 16px;
 }
 
 .header_post{
@@ -319,6 +321,7 @@ body{
     padding:38px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 .content_post p{
     margin: 0;

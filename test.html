@@ -1,33 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Cập nhật ảnh trong div</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Định dạng biểu tượng */
+        .fa {
+            cursor: pointer;
+            user-select: none;
+            padding: 10px;
+        }
+
+        /* Biểu tượng khi hiện mật khẩu */
+        .fa-eye {
+            color: green;
+        }
+
+        /* Biểu tượng khi ẩn mật khẩu */
+        .fa-eye-slash {
+            color: red;
+        }
+    </style>
+
 </head>
 
 <body>
-    <div id="imageContainer">
-        <img id="displayImage" src="default-image.jpg" alt="Ảnh">
-    </div>
-    <input type="file" id="fileInput" accept="image/*">
+    <input type="password" id="passwordInput" />
+    <i id="showPasswordToggle" class="fa fa-eye"></i>
 
-    <script>
-        const displayImage = document.getElementById('displayImage');
-        const fileInput = document.getElementById('fileInput');
-
-        fileInput.addEventListener('change', function () {
-            const file = fileInput.files[0];
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    displayImage.src = e.target.result;
-                };
-
-                reader.readAsDataURL(file);
-            }
-        });
-    </script>
 </body>
+<script>
+    // Lấy các phần tử cần sử dụng
+    const passwordInput = document.getElementById('passwordInput');
+    const showPasswordToggle = document.getElementById('showPasswordToggle');
+
+    // Xử lý khi con mắt (icon) được nhấn
+    showPasswordToggle.addEventListener('click', function () {
+        // Kiểm tra trạng thái của trường password
+        if (passwordInput.type === 'password') {
+            // Đang ẩn mật khẩu, nên hiển thị mật khẩu
+            passwordInput.type = 'text';
+            showPasswordToggle.classList.remove('fa-eye');
+            showPasswordToggle.classList.add('fa-eye-slash');
+        } else {
+            // Đang hiển thị mật khẩu, nên ẩn mật khẩu
+            passwordInput.type = 'password';
+            showPasswordToggle.classList.remove('fa-eye-slash');
+            showPasswordToggle.classList.add('fa-eye');
+        }
+    });
+
+</script>
 
 </html>
