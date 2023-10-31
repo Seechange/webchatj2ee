@@ -96,6 +96,7 @@ body{
     height: 39px;
     display: flex;
     align-items: center;
+    cursor: pointer;
     /* justify-content: space-between; */
 }
 

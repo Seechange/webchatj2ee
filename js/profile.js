@@ -16,12 +16,12 @@ const user = [
         {id:5,time:"9h",public:"Tất cả mọi người",content:"Say hi",love: 12, comment: 10 , share: 11}
 
     ],location:"Tp Ho Chi Minh", Birthday: "12/05/1998",Join:"11/01/2008",story:"Tình là gì !!",username:"",matualFriend:[
-        {id:2,name:"Dinh Dung",image:"../assets/img/a2.jpg",isfolow:false},
-        {id:3,name:"Tú Tài",image:"../assets/img/a3.jpg",isfolow:true},
-        {id:4,name:"Thành Lực",image:"../assets/img/a4.jpg",isfolow:true},
-        {id:5,name:"Phương Nhi",image:"../assets/img/a5.jpg",isfolow:true},
-        {id:6,name:"Chí Dũng",image:"../assets/img/a6.jpg",isfolow:false},
-        {id:7,name:"Danh Võ",image:"../assets/img/pexels-irina-iriser-1366957.jpg",isfolow:false},
+        {id:2,name:"Dinh Dung",image:"../assets/img/a2.jpg",isfolow:false,isFriend:false},
+        {id:3,name:"Tú Tài",image:"../assets/img/a3.jpg",isfolow:true,isFriend:false},
+        {id:4,name:"Thành Lực",image:"../assets/img/a4.jpg",isfolow:true,isFriend:false},
+        {id:5,name:"Phương Nhi",image:"../assets/img/a5.jpg",isfolow:true,isFriend:true},
+        {id:6,name:"Chí Dũng",image:"../assets/img/a6.jpg",isfolow:false,isFriend:true},
+        {id:7,name:"Danh Võ",image:"../assets/img/pexels-irina-iriser-1366957.jpg",isfolow:false,isFriend:true},
 
     ]},
     {id:2,name:"Dinh Dung",totalFriend:2000, matualFriend: 200,backgroud: [
@@ -81,6 +81,72 @@ const user = [
         {id:1,time:"",public:"",content:""}
     ]}
 ]
+renderCreatPost = (getIndex) => {
+    let element = ""
+    user.map((value,index) => {
+        if(index === getIndex){
+            element += `<div class="create_post-content-wrapper-title">
+            <div class="sidebar_left-user-profile">
+                <div class="sidebar_left-profile-image">
+                    <img id=""
+                        src="${value.avatar[0].image}"
+                        alt="" />
+                </div>
+                <div class="create_post-profile-name">
+                    <p id="create_post">${value.name}</p>
+                </div>
+                <div class="create_post-profile-select">
+                    <select>
+                        <option>Tất cả mọi người</option>
+                        <option>Chỉ mình tôi</option>
+                        <option>Bạn bè</option>
+                        <option>Custom</option>
+                    </select>
+                </div>
+            </div>
+            <div class="create_post-content-wrapper-text">
+                <div contenteditable="true" id="create_post-content"></div>
+            </div>
+    
+            <div class="create_post-post-editor">
+                <div class="create_post-editor-icons">
+                    <div class="create_post-icon-group">
+                        <p>Thêm vào bài viết của bạn:</p>
+                        <div>
+                            <svg style="fill: green" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                viewBox="0 0 576 512">
+                                <path
+                                    d="M160 32c-35.3 0-64 28.7-64 64V320c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H160zM396 138.7l96 144c4.9 7.4 5.4 16.8 1.2 24.6S480.9 320 472 320H328 280 200c-9.2 0-17.6-5.3-21.6-13.6s-2.9-18.2 2.9-25.4l64-80c4.6-5.7 11.4-9 18.7-9s14.2 3.3 18.7 9l17.3 21.6 56-84C360.5 132 368 128 376 128s15.5 4 20 10.7zM192 128a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zM48 120c0-13.3-10.7-24-24-24S0 106.7 0 120V344c0 75.1 60.9 136 136 136H456c13.3 0 24-10.7 24-24s-10.7-24-24-24H136c-48.6 0-88-39.4-88-88V120z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <svg style="fill: orange" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                viewBox="0 0 512 512">
+                                <path
+                                    d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM164.1 325.5C182 346.2 212.6 368 256 368s74-21.8 91.9-42.5c5.8-6.7 15.9-7.4 22.6-1.6s7.4 15.9 1.6 22.6C349.8 372.1 311.1 400 256 400s-93.8-27.9-116.1-53.5c-5.8-6.7-5.1-16.8 1.6-22.6s16.8-5.1 22.6 1.6zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <svg style="fill: blue" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                viewBox="0 0 640 512">
+                                <path
+                                    d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c10 0 18.8-4.9 24.2-12.5l-99.2-99.2c-14.9-14.9-23.3-35.1-23.3-56.1v-33c-15.9-4.7-32.8-7.2-50.3-7.2H178.3zM384 224c-17.7 0-32 14.3-32 32v82.7c0 17 6.7 33.3 18.7 45.3L478.1 491.3c18.7 18.7 49.1 18.7 67.9 0l73.4-73.4c18.7-18.7 18.7-49.1 0-67.9L512 242.7c-12-12-28.3-18.7-45.3-18.7H384zm24 80a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="create_post-submit-button">
+                    <button class="create_post-submit-btn">Đăng</button>
+                </div>
+            </div>
+        </div>`
+        }
+    })
+    document.getElementById("creat_post").innerHTML = element
+}
+
+renderCreatPost(0)
+
 renderPost = () => {
     let element = '';
     user.map((value, index) => {
@@ -425,11 +491,12 @@ renderImage =() => {
 }
 renderImage()
 renderFriends = () => {
+    idmain = 0
     getIndex = 0
     const data = user[getIndex].matualFriend
     let element = ""
     data.map((value, index) => {
-        element += `<div onclick = "getId(${value.id})" class="Profile_friend-wrapper-friend">
+        element += `<div onclick = "getId(${idmain},${value.id})" class="Profile_friend-wrapper-friend">
             <img class="Profile_friend-image" src="${value.image}" alt="" />
             <div class="Profile_friend-name">${value.name}</div>
         </div>`
@@ -771,6 +838,7 @@ totalMatualFriend = (arr) => {
     return count
 }
 renderHeaderFriend = (getIndex) => {
+    let idmain = 0
     let element = ""
     user.map((value, index) => {
         if(index === getIndex){
@@ -787,7 +855,7 @@ renderHeaderFriend = (getIndex) => {
                 <p>${value.matualFriend.length} bạn bè - 300 bạn chung</p>
             </div>
             <div class="profile_public">
-                <button type="button" class="status_profile dropdown-toggle" data-bs-toggle="dropdown">
+                <button id="isFriend" type="button" class="status_profile dropdown-toggle" data-bs-toggle="dropdown">
                     <svg xmlns="http://www.w3.org/2000/svg" width="33" height="21" viewBox="0 0 33 21" fill="none">
                         <path
                             d="M3.8197 5.25C3.8197 3.85761 4.35627 2.52226 5.31138 1.53769C6.26649 0.553123 7.5619 0 8.91263 0C10.2634 0 11.5588 0.553123 12.5139 1.53769C13.469 2.52226 14.0056 3.85761 14.0056 5.25C14.0056 6.64239 13.469 7.97775 12.5139 8.96231C11.5588 9.94688 10.2634 10.5 8.91263 10.5C7.5619 10.5 6.26649 9.94688 5.31138 8.96231C4.35627 7.97775 3.8197 6.64239 3.8197 5.25ZM0 19.7818C0 15.7418 3.17512 12.4688 7.09429 12.4688H10.731C14.6501 12.4688 17.8253 15.7418 17.8253 19.7818C17.8253 20.4545 17.2961 21 16.6435 21H1.18172C0.529187 21 0 20.4545 0 19.7818ZM24.8678 7.25977L19.7749 12.5098C19.4009 12.8953 18.7961 12.8953 18.4261 12.5098L15.8796 9.88477C15.5056 9.49922 15.5056 8.87578 15.8796 8.49434C16.2536 8.11289 16.8584 8.10879 17.2284 8.49434L19.0985 10.4221L23.515 5.86523C23.889 5.47969 24.4938 5.47969 24.8638 5.86523C25.2339 6.25078 25.2379 6.87422 24.8638 7.25566L24.8678 7.25977Z"
@@ -795,8 +863,12 @@ renderHeaderFriend = (getIndex) => {
                     </svg>
                     <p>Bạn bè</p>
                 </button>
-                <ul style="padding: 0; margin: 0; width: 140px;" class="dropdown-menu">
-                    <li>
+                <button onclick = "handleAddFriend(${idmain},${value.id})" id="notFriend" type="button" class="status_profile dropdown-toggle" data-bs-toggle="dropdown">
+                    <img src ="https://static.xx.fbcdn.net/rsrc.php/v3/yK/r/r2FA830xjtI.png" height ="18px" width="18px">
+                    <p>Thêm bạn bè</p>
+                </button>
+                <ul id="show_custom" style="padding: 0; margin: 0; width: 140px;" class="dropdown-menu">
+                    <li onclick ="handleFolowFriend(${idmain},${value.id})" id="child_folowing">
                         <div class="dropdown-item box-menu">
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                                 <path
@@ -804,6 +876,17 @@ renderHeaderFriend = (getIndex) => {
                                     fill="black" />
                             </svg>
                             <p>Theo dõi</p>
+                        </div>
+                    </li>
+                    <hr>
+                    <li onclick="handleUnFolow(${idmain},${value.id})" id="child_unfolowing">
+                        <div class="dropdown-item box-menu">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
+                                <path
+                                    d="M3 1.3125C1.34531 1.3125 0 2.48965 0 3.9375V17.0625C0 18.5104 1.34531 19.6875 3 19.6875H18C19.6547 19.6875 21 18.5104 21 17.0625V3.9375C21 2.48965 19.6547 1.3125 18 1.3125H3ZM9.375 14.1094V11.4844H6.375C5.75156 11.4844 5.25 11.0455 5.25 10.5C5.25 9.95449 5.75156 9.51562 6.375 9.51562H9.375V6.89062C9.375 6.34512 9.87656 5.90625 10.5 5.90625C11.1234 5.90625 11.625 6.34512 11.625 6.89062V9.51562H14.625C15.2484 9.51562 15.75 9.95449 15.75 10.5C15.75 11.0455 15.2484 11.4844 14.625 11.4844H11.625V14.1094C11.625 14.6549 11.1234 15.0938 10.5 15.0938C9.87656 15.0938 9.375 14.6549 9.375 14.1094Z"
+                                    fill="black" />
+                            </svg>
+                            <p>Hủy theo dõi</p>
                         </div>
                     </li>
                     <hr>
@@ -843,7 +926,7 @@ renderHeaderFriend = (getIndex) => {
                     </svg>
                     <p>Nhắn tin</p>
                 </button>
-                <button type="button" class="status_profile">
+                <button onclick ="handleFolowFriend(${idmain},${value.id})" id= "unfolowing" type="button" class="status_profile">
                     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21" fill="none">
                         <path
                             d="M3 1.3125C1.34531 1.3125 0 2.48965 0 3.9375V17.0625C0 18.5104 1.34531 19.6875 3 19.6875H18C19.6547 19.6875 21 18.5104 21 17.0625V3.9375C21 2.48965 19.6547 1.3125 18 1.3125H3ZM9.375 14.1094V11.4844H6.375C5.75156 11.4844 5.25 11.0455 5.25 10.5C5.25 9.95449 5.75156 9.51562 6.375 9.51562H9.375V6.89062C9.375 6.34512 9.87656 5.90625 10.5 5.90625C11.1234 5.90625 11.625 6.34512 11.625 6.89062V9.51562H14.625C15.2484 9.51562 15.75 9.95449 15.75 10.5C15.75 11.0455 15.2484 11.4844 14.625 11.4844H11.625V14.1094C11.625 14.6549 11.1234 15.0938 10.5 15.0938C9.87656 15.0938 9.375 14.6549 9.375 14.1094Z"
@@ -851,7 +934,11 @@ renderHeaderFriend = (getIndex) => {
                     </svg>
                     <p>Theo dõi</p>
                 </button>
-    
+                <button id="folowing" type="button" class="status_profile">
+                    <img src="https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/3rG7SyNnpzs.png" height = "18px" width ="18px">
+                    <p>Đang theo dõi</p>
+                </button>
+                
             </div>
         </div>
         `
@@ -987,8 +1074,10 @@ renderListFlolow =(getIndex) => {
     })
     document.getElementById("list_member_folow").innerHTML = element
 }
-getId = (id) => {
+getId = (idmain,id) => {
     let indexUser = user.findIndex(value => value.id === id)
+    const result = user[idmain].matualFriend.find(value => value.id === id);
+    console.log(result)
     renderHeaderFriend(indexUser)
     renderprofileIntroduceFriend(indexUser)
     renderPost(indexUser)
@@ -996,7 +1085,92 @@ getId = (id) => {
     renderFriends(indexUser)
     renderPageFriend(indexUser)
     renderListFlolow(indexUser)
+    document.getElementById("add_post").style.display = "none"
+    console.log(result.isFriend)
+    if(result.isfolow === true){
+        document.getElementById("unfolowing").style.display = "none"
+        document.getElementById("child_unfolowing").style.display = "none"
+    }else{
+        document.getElementById("folowing").style.display = "none"
+        document.getElementById("child_folowing").style.display = "none"
+    }
+
+    if(result.isFriend === false){
+        document.getElementById("isFriend").style.display = "none"
+        document.getElementById("notFriend").classList.remove("dropdown-toggle")
+        document.getElementById("show_custom").style.display = "none"
+    }else{
+        document.getElementById("notFriend").style.display = "none"
+        
+    }
+    
 }
+handleAddFriend = (idmain,id) => {
+    let indexUser = user.findIndex(value => value.id === id)
+    let data = user[idmain].matualFriend.findIndex(value => value.id === id)
+    if(data !== -1){
+        user[idmain].matualFriend[data] = {
+            ...user[idmain].matualFriend[data],
+            isFriend: true
+        }
+        getId(idmain,id)
+        document.getElementById("notFriend").style.display = "none"
+        document.getElementById("isFriend").style.display = "flex"
+    }else{
+        user[idmain].matualFriend.unshift({
+            id:Math.floor(Math.random()*100000),
+            name:data.name,
+            image:data.image,
+            isfolow:false,
+            isFriend:true
+        })
+    }
+    console.log(user[idmain].matualFriend)
+}
+
+handleFolowFriend =(idmain,id) => {
+    let indexUser = user.findIndex(value => value.id === id)
+    let data = user[idmain].matualFriend.findIndex(value => value.id === id)
+    if(data !== -1){
+        user[idmain].matualFriend[data] = {
+            ...user[idmain].matualFriend[data],
+            isfolow:true
+        }
+        handleAddFriend(idmain, id)
+        document.getElementById("unfolowing").style.display = "none"
+        document.getElementById("child_unfolowing").style.display = "flex"
+        document.getElementById("child_folowing").style.display = "none"
+        document.getElementById("folowing").style.display = "flex"
+    }else{
+        user[idmain].matualFriend.unshift({
+            id:Math.floor(Math.random()*100000),
+            name:data.name,
+            image:data.image,
+            isfolow:true,
+            isFriend:true
+        })
+    }
+    console.log(user[idmain].matualFriend)
+}
+
+handleUnFolow = (idmain, id) => {
+    let indexUser = user.findIndex(value => value.id === id)
+    let data = user[idmain].matualFriend.findIndex(value => value.id === id)
+    user[idmain].matualFriend[data] = {
+        ...user[idmain].matualFriend[data],
+        isfolow:false
+    }
+    handleAddFriend(idmain,id)
+    document.getElementById("child_unfolowing").style.display = "none"
+    document.getElementById("child_folowing").style.display = "flex"
+    // document.getElementById("unfolowing").style.display = "none"
+    // document.getElementById("folowing").style.display = "flex"
+}
+
+handleUnFriend = () => {
+    
+}
+
 
 
 
